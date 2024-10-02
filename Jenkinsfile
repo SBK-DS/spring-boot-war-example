@@ -37,6 +37,10 @@ pipeline{
             }
         }
         stage("Deploy on Production"){
+            input {
+                message "Should we continue?"
+                ok "Yes, we should."
+            }
             steps{
                 bat '''
                     echo "========executing A========"
