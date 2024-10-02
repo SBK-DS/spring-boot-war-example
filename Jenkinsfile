@@ -17,6 +17,7 @@ pipeline{
                     echo "JAVA_HOME=%JAVA_HOME%"
                     mvn test
                 '''
+                slackSend channel: 'jenkins-notifications', message: 'Job Started!'
             }
         }
         stage("Build"){
@@ -55,9 +56,11 @@ pipeline{
         }
         success{
             echo "========pipeline executed successfully ========"
+            slackSend channel: 'jenkins-notifications', message: 'Job Successs!'
         }
         failure{
             echo "========pipeline execution failed========"
+            slackSend channel: 'jenkins-notifications', message: 'Job Failed!'
         }
     }
 }
