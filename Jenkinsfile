@@ -32,7 +32,7 @@ pipeline{
             steps{
                 bat '''
                     echo "========executing A========"
-                    deploy adapters: [tomcat9(credentialsId: 'tomcat9details', path: '', url: 'http://192.168.56.101:8080')], contextPath: '/app', war: '**/*.war'
+                    deploy adapters: [tomcat9(credentialsId: 'tomcat9details', path: '', url: 'http://192.168.56.101:8082')], contextPath: '/app', war: '**/*.war'
                 '''
             }
         }
@@ -40,7 +40,7 @@ pipeline{
             steps{
                 bat '''
                     echo "========executing A========"
-                    deploy adapters: [tomcat9(credentialsId: 'tomcat9details', path: '', url: 'http://192.168.56.102:8080')], contextPath: '/app', war: '**/*.war'
+                    deploy adapters: [tomcat9(credentialsId: 'tomcat9details', path: '', url: 'http://192.168.56.102:8082')], contextPath: '/app', war: '**/*.war'
                 '''
             }
         }
